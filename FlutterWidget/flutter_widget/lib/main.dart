@@ -15,17 +15,26 @@ import 'package:flutter/material.dart';
 
 //Flutter EntryPoint
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+      title: "Fluter Widget App",
+      home: HomePage()
+      )
+  );
 }
 
-class MyApp extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "HKHR App",
       home: Scaffold(
           appBar: AppBar(title: Text("Home")),
-          body: Center(child: Text("HkHRHKHRRRHH")
+          body:
+          Padding(padding: EdgeInsets.all(20.0),
+            child: Text("HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH HkHRHKHRRRHH",
+              textAlign: TextAlign.justify,
+              style: (TextStyle(color: Colors.green,fontSize: 15,fontStyle: FontStyle.italic)),
+          )
           )
       ),
     );
