@@ -9,29 +9,25 @@ import 'package:flutter/material.dart';
     Scaffold ==> when need new page create in Scaffold methord (appbar,body)
     appbar   ==> (tittle)
 
-   object  ==> create new Instences with out 'new' Key word
+    object  ==> create new Instences with out 'new' Key word
 
  ***/
 
 //Flutter EntryPoint
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: "HKHR App",
       home: Scaffold(
-        appBar: new AppBar(title: new Text("Home")),
-        body: new Text("HkHRHKHRRRHH")
-
+          appBar: AppBar(title: Text("Home")),
+          body: Center(child: Text("HkHRHKHRRRHH")
+          )
       ),
-
     );
   }
-
-
 }
