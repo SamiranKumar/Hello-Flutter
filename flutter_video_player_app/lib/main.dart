@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import 'CustomVideoPlayer.dart';
+
 void main() => runApp(VideoPlayerApp());
 
 class VideoPlayerApp extends StatelessWidget {
@@ -8,11 +10,37 @@ class VideoPlayerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Skh Video Player",
-      home: VideoPlayerUI(),
+      home: CustomVideoPlayer(
+           getContoler(),
+
+
+      ),
     );
   }
 }
 
+
+
+getContoler(){
+
+  VideoPlayerController v = VideoPlayerController.network(
+   // 'https://live-technologies-vod.akamaized.net/cinematic/movies/chittagainga_powa_noakhailla_maia/song/super_hero/playlist.m3u8',
+      "https://live-technologies-vod.akamaized.net/cinematic/movies/chittagainga_powa_noakhailla_maia/song/selfie/playlist.m3u8"
+       // 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+
+      );
+
+
+ // v.initialize();
+
+  return  v;
+
+
+
+}
+
+
+/*
 class VideoPlayerUI extends StatefulWidget {
   VideoPlayerUI({Key key}) : super(key: key);
 
@@ -30,12 +58,14 @@ class _VideoPlayerUiState extends State<VideoPlayerUI> {
   void initState() {
     _videoPlayerController = VideoPlayerController.network(
       'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+
     );
 
     _initVideoPlayer = _videoPlayerController
         .initialize(); //// initialize the controller and store the Future for later use.
-    _videoPlayerController
-        .setLooping(true); //Use the controller to loop the video.
+    _videoPlayerController.setLooping(true); //Use the controller to loop the video.
+
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
 
     super.initState();
   }
@@ -43,6 +73,7 @@ class _VideoPlayerUiState extends State<VideoPlayerUI> {
   @override
   void dispose() {
     _videoPlayerController.dispose(); //to free up resources
+    SystemChrome.restoreSystemUIOverlays();
     super.dispose();
   }
 
@@ -74,6 +105,7 @@ class _VideoPlayerUiState extends State<VideoPlayerUI> {
             return AspectRatio(
               aspectRatio: _videoPlayerController.value.aspectRatio,
               child: VideoPlayer(_videoPlayerController),
+
             );
           } else {
             // If the _videoPlayerController is still initializing, show a
@@ -118,3 +150,4 @@ class _VideoPlayerUiState extends State<VideoPlayerUI> {
     );
   }
 }
+*/
